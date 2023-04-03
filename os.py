@@ -27,7 +27,7 @@ subprocess.run('add-apt-repository -y "deb [arch=amd64] https://download.docker.
 subprocess.run('apt update', shell=True)
 subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin', shell=True)
 
-subprocess.run('apt install golang-go', shell=True)
+subprocess.run('apt install -y golang-go', shell=True)
 subprocess.run('curl https://sh.rustup.rs -sSf | sh', shell=True)
 
 # ufw
