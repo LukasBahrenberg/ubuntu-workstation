@@ -14,11 +14,11 @@ gituser = os.getenv('GITUSER')
 gitemail = os.getenv('GITEMAIL')
 
 # setup git
-subprocess.run('sudo ssh-keygen -t ed25519 -C \"{}\"'.format(gitemail), shell=True)
-subprocess.run('sudo ssh-add ~/.ssh/id_ed25519', shell=True)
+subprocess.run('ssh-keygen -t ed25519 -C \"{}\"'.format(gitemail), shell=True)
+subprocess.run('ssh-add ~/.ssh/id_ed25519', shell=True)
 subprocess.run('git config --global user.name "{}"'.format(gituser), shell=True)
 subprocess.run('git config --global user.email "{}"'.format(gitemail), shell=True)
-subprocess.run('sudo cat ~/.ssh/id_ed25519.pub', shell=True)
+subprocess.run('cat ~/.ssh/id_ed25519.pub', shell=True)
 
 # get user name
 user = getpass.getuser()
