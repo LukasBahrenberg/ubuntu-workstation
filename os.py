@@ -30,8 +30,6 @@ subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-comp
 subprocess.run('apt install -y snapd', shell=True)
 subprocess.run('snap install go --classic', shell=True)
 
-subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
-
 # ufw
 subprocess.run('ufw logging on', shell=True)
 subprocess.run('ufw allow 22', shell=True) #ssh
