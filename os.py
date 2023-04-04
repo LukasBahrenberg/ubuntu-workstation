@@ -27,11 +27,10 @@ subprocess.run('add-apt-repository -y "deb [arch=amd64] https://download.docker.
 subprocess.run('apt update', shell=True)
 subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin', shell=True)
 
-subprocess.run('wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz', shell=True)
-subprocess.run('tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz', shell=True)
-subprocess.run('export PATH=$PATH:/usr/local/go/bin', shell=True)
+subprocess.run('apt install -y snapd', shell=True)
+subprocess.run('snap install go --classic', shell=True)
 
-subprocess.run('curl https://sh.rustup.rs -sSf | sh', shell=True)
+subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
 
 # ufw
 subprocess.run('ufw logging on', shell=True)

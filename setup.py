@@ -20,11 +20,14 @@ subprocess.run('git config --global user.name "{}"'.format(gituser), shell=True)
 subprocess.run('git config --global user.email "{}"'.format(gitemail), shell=True)
 subprocess.run('cat ~/.ssh/id_ed25519.pub', shell=True)
 
-# get user name
-user = getpass.getuser()
+# install Rust
+subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
 
 # delete setup script
 subprocess.run('sudo rm -rf /os.py', shell=True)
+
+# get user name
+user = getpass.getuser()
 
 # reset permissions
 subprocess.run('sudo chown -R {}:sudo /home/{}'.format(user, user), shell=True)
