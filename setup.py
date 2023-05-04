@@ -11,12 +11,15 @@ load_dotenv()
 
 # install Rust
 subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
+subprocess.run('cargo install --no-default-features --force cargo-make', shell=True)
+
 
 # get user name
 user = getpass.getuser()
 
 # reset permissions
 subprocess.run('sudo chown -R {}:sudo /home/{}'.format(user, user), shell=True)
+
 
 # assign env variables
 gituser = os.getenv('GITUSER')
