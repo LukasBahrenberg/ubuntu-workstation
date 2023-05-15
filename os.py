@@ -27,9 +27,6 @@ subprocess.run('add-apt-repository -y "deb [arch=amd64] https://download.docker.
 subprocess.run('apt update', shell=True)
 subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin', shell=True)
 
-subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
-subprocess.run('cargo install --no-default-features --force cargo-make', shell=True)
-
 subprocess.run('apt install -y snapd', shell=True)
 subprocess.run('snap install go --classic', shell=True)
 
