@@ -11,8 +11,8 @@ load_dotenv()
 
 # install Rust
 subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
-subprocess.run('cargo install --no-default-features --force cargo-make', shell=True)
 subprocess.run('export PATH=$PATH:~/.cargo/bin/', shell=True)
+subprocess.run('cargo install --no-default-features --force cargo-make', shell=True)
 
 # get user name
 user = getpass.getuser()
