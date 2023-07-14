@@ -44,7 +44,7 @@ subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-comp
 # install snapd
 subprocess.run('apt install -y snapd', shell=True)
 # install tmux
-subprocess.run('sudo apt install tmux', shell=True)
+subprocess.run('apt install -y tmux', shell=True)
 
 # setup ufw
 subprocess.run('ufw logging on', shell=True)
