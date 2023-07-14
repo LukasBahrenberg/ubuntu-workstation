@@ -18,7 +18,8 @@ subprocess.run('sudo apt-get install -y nodejs', shell=True)
 subprocess.run('wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh', shell=True)
 subprocess.run('bash Miniconda3-latest-Linux-x86_64.sh -b', shell=True)
 subprocess.run('rm Miniconda3-latest-Linux-x86_64.sh', shell=True)
-subprocess.run('conda config --set auto_activate_base false', shell=True)
+subprocess.run('echo \'export CONDA_AUTO_ACTIVATE_BASE=false\' >> ~/.bashrc', shell=True)
+subprocess.run('export CONDA_AUTO_ACTIVATE_BASE=false', shell=True)
 
 # install go
 subprocess.run('snap install go --classic', shell=True)
