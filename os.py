@@ -2,13 +2,22 @@ import subprocess
 import random
 import string
 
+## user setup
+# create new user
+user = input("Enter user name: ")
+subprocess.run('adduser --disabled-password --gecos \"\" {}'.format(user), shell=True)
+subprocess.run('usermod -aG sudo {}'.format(user), shell=True)
+
+# set password hash, use pwd.py script on seperate machine to generate password
+passwordhash = input("Enter user password hash: ")
+subprocess.run('printf \'{}:{}\' | sudo chpasswd --encrypted'.format(user, passwordhash), shell=True)
+
+## installations
 # updates & upgrades
 subprocess.run('apt-get update', shell=True)
 subprocess.run('apt-get upgrade -y', shell=True)
 subprocess.run('apt update', shell=True)
 subprocess.run('apt upgrade -y', shell=True)
-
-# installations
 
 # install dev dependencies
 subprocess.run('apt install -y build-essential', shell=True)
@@ -44,15 +53,6 @@ subprocess.run('ufw --force enable', shell=True)
 subprocess.run('systemctl enable fail2ban', shell=True)
 subprocess.run('systemctl start fail2ban', shell=True)
 subprocess.run('systemctl status fail2ban', shell=True)
-
-# create new user
-user = input("Enter user name: ")
-subprocess.run('adduser --disabled-password --gecos \"\" {}'.format(user), shell=True)
-subprocess.run('usermod -aG sudo {}'.format(user), shell=True)
-
-# set password hash, use pwd.py script on seperate machine to generate password
-passwordhash = input("Enter user password hash: ")
-subprocess.run('printf \'{}:{}\' | sudo chpasswd --encrypted'.format(user, passwordhash), shell=True)
 
 # git repo
 subprocess.run('git clone https://github.com/LukasBahrenberg/ubuntu-workstation.git /home/{}/ubuntu-workstation'.format(user), shell=True)
