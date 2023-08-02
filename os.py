@@ -30,6 +30,9 @@ subprocess.run('apt install -y fail2ban', shell=True)
 subprocess.run('apt-get install -y git', shell=True)
 
 # install python stuff
+subprocess.run('add-apt-repository -y ppa:deadsnakes/ppa', shell=True)
+subprocess.run('apt-get update', shell=True)
+subprocess.run('apt-get install -y python3.11', shell=True)
 subprocess.run('apt-get install -y python3-pip', shell=True)
 subprocess.run('pip3 install requests', shell=True)
 subprocess.run('pip3 install python-dotenv', shell=True)
