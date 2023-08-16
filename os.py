@@ -38,7 +38,7 @@ subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/
 subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2', shell=True) 
 subprocess.run('echo 2 | sudo update-alternatives --config python3', shell=True)
 subprocess.run('apt-get install -y python3-pip', shell=True)
-subprocess.run('apt install python-is-python3')
+subprocess.run('apt install python-is-python3', shell=True)
 subprocess.run('pip3 install requests', shell=True)
 subprocess.run('pip3 install python-dotenv', shell=True)
 
