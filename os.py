@@ -40,7 +40,7 @@ subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-comp
 subprocess.run('add-apt-repository -y ppa:deadsnakes/ppa', shell=True)
 subprocess.run('apt-get update', shell=True)
 subprocess.run('apt-get install -y python3.11', shell=True)
-subprocess.run('apt-get install python3.11-venv', shell=True)
+subprocess.run('apt-get install -y python3.11-venv', shell=True)
 subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1', shell=True)
 subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2', shell=True) 
 subprocess.run('echo 2 | sudo update-alternatives --config python3', shell=True)
