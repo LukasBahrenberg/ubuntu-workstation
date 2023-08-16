@@ -29,6 +29,13 @@ subprocess.run('apt-get install -y pkg-config', shell=True)
 subprocess.run('apt install -y fail2ban', shell=True)
 subprocess.run('apt-get install -y git', shell=True)
 
+# install docker 
+subprocess.run('apt install -y software-properties-common', shell=True)
+subprocess.run('curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg', shell=True)
+subprocess.run('add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"', shell=True)
+subprocess.run('apt update', shell=True)
+subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin', shell=True)
+
 # install python stuff
 subprocess.run('add-apt-repository -y ppa:deadsnakes/ppa', shell=True)
 subprocess.run('apt-get update', shell=True)
@@ -42,15 +49,9 @@ subprocess.run('apt install -y python-is-python3', shell=True)
 subprocess.run('pip3 install requests', shell=True)
 subprocess.run('pip3 install python-dotenv', shell=True)
 
-# install docker 
-subprocess.run('apt install -y software-properties-common', shell=True)
-subprocess.run('curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg', shell=True)
-subprocess.run('add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"', shell=True)
-subprocess.run('apt update', shell=True)
-subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin', shell=True)
-
 # install snapd
 subprocess.run('apt install -y snapd', shell=True)
+
 # install tmux
 subprocess.run('apt install -y tmux', shell=True)
 
