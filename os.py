@@ -36,18 +36,18 @@ subprocess.run('add-apt-repository -y "deb [arch=amd64] https://download.docker.
 subprocess.run('apt update', shell=True)
 subprocess.run('apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin', shell=True)
 
-# install python stuff
-subprocess.run('add-apt-repository -y ppa:deadsnakes/ppa', shell=True)
-subprocess.run('apt-get update', shell=True)
-subprocess.run('apt-get install -y python3.11', shell=True)
-subprocess.run('apt-get install -y python3.11-venv', shell=True)
-subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1', shell=True)
-subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2', shell=True) 
-subprocess.run('echo 2 | sudo update-alternatives --config python3', shell=True)
-subprocess.run('apt-get install -y python3-pip', shell=True)
-subprocess.run('apt install -y python-is-python3', shell=True)
-subprocess.run('pip3 install requests', shell=True)
-subprocess.run('pip3 install python-dotenv', shell=True)
+# install python 3.11 stuff
+# subprocess.run('add-apt-repository -y ppa:deadsnakes/ppa', shell=True)
+# subprocess.run('apt-get update', shell=True)
+# subprocess.run('apt-get install -y python3.11', shell=True)
+# subprocess.run('apt-get install -y python3.11-venv', shell=True)
+# subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1', shell=True)
+# subprocess.run('update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2', shell=True) 
+# subprocess.run('echo 2 | sudo update-alternatives --config python3', shell=True)
+# subprocess.run('apt-get install -y python3-pip', shell=True)
+# subprocess.run('apt install -y python-is-python3', shell=True)
+# subprocess.run('pip3 install requests', shell=True)
+# subprocess.run('pip3 install python-dotenv', shell=True)
 
 # install snapd
 subprocess.run('apt install -y snapd', shell=True)
