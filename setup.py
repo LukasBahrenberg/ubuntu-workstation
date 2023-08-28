@@ -20,7 +20,9 @@ subprocess.run('rm Miniconda3-latest-Linux-x86_64.sh', shell=True)
 
 # install poetry
 subprocess.run('curl -sSL https://install.python-poetry.org | python3 -', shell=True)
+subprocess.run('export PATH=$HOME/.local/bin:$PATH', shell=True)
 subprocess.run('echo "export PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc', shell=True)
+subprocess.run('poetry config virtualenvs.in-project true', shell=True)
 
 # install go
 subprocess.run('sudo snap install go --classic', shell=True)
