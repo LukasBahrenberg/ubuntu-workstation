@@ -18,6 +18,10 @@ subprocess.run('wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux
 subprocess.run('bash Miniconda3-latest-Linux-x86_64.sh -b', shell=True)
 subprocess.run('rm Miniconda3-latest-Linux-x86_64.sh', shell=True)
 
+# install poetry
+subprocess.run('curl -sSL https://install.python-poetry.org | python3 -', shell=True)
+subprocess.run('echo "export PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc', shell=True)
+
 # install go
 subprocess.run('sudo snap install go --classic', shell=True)
 
