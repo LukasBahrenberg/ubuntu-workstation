@@ -24,6 +24,7 @@ subprocess.run('apt install -y build-essential', shell=True)
 subprocess.run('apt install -y libssl-dev', shell=True)
 subprocess.run('apt install -y whois', shell=True)
 subprocess.run('apt-get install -y pkg-config', shell=True)
+subprocess.run('apt-get install -y libnss3-dev libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev libasound2', shell=True)
 
 # install fail2ban
 subprocess.run('apt install -y fail2ban', shell=True)
