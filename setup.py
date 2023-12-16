@@ -14,9 +14,7 @@ subprocess.run('sudo apt-get update', shell=True)
 subprocess.run('sudo apt-get install -y nodejs', shell=True)
 
 # install dotnet
-subprocess.run('wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh', shell=True)    
-subprocess.run('chmod +x ./dotnet-install.sh', shell=True)
-subprocess.run('./dotnet-install.sh --version latest', shell=True)
+subprocess.run('sudo snap install dotnet-sdk --classic', shell=True)    
 
 # install angular
 subprocess.run('sudo npm install -g @angular/cli', shell=True)
