@@ -13,6 +13,11 @@ subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
 subprocess.run('sudo apt-get update', shell=True)
 subprocess.run('sudo apt-get install -y nodejs', shell=True)
 
+# install dotnet
+subprocess.run('wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh', shell=True)    
+subprocess.run('chmod +x ./dotnet-install.sh', shell=True)
+subprocess.run('./dotnet-install.sh --version latest', shell=True)
+
 # install conda 
 subprocess.run('wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh', shell=True)
 subprocess.run('bash Miniconda3-latest-Linux-x86_64.sh -b', shell=True)
