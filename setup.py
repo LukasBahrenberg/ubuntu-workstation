@@ -33,6 +33,9 @@ subprocess.run('poetry config virtualenvs.in-project true', shell=True)
 # install go
 subprocess.run('sudo snap install go --classic', shell=True)
 
+# create python link for python3 in Ubuntu
+subprocess.run('sudo ln -s /usr/bin/python3 /usr/bin/python', shell=True)
+
 # get user name
 user = getpass.getuser()
 
