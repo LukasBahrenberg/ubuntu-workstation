@@ -9,7 +9,7 @@ subprocess.run('curl https://sh.rustup.rs -sSf | sh -s -- -y', shell=True)
 # subprocess.run('cargo install --no-default-features --force cargo-make', shell=True)
 
 # install current nodejs version
-# subprocess.run('curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -', shell=True)    
+subprocess.run('curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -', shell=True)    
 subprocess.run('sudo apt-get update', shell=True)
 subprocess.run('sudo apt-get install -y nodejs', shell=True)
 
