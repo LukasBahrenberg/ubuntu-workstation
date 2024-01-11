@@ -33,6 +33,11 @@ subprocess.run('poetry config virtualenvs.in-project true --global', shell=True)
 # install go
 subprocess.run('sudo snap install go --classic', shell=True)
 
+#install gcloudcli
+subprocess.run('curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg', shell=True)
+subprocess.run('echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list', shell=True)
+subprocess.run('sudo apt-get update && sudo apt-get install google-cloud-cli', shell=True)
+
 # create python link for python3 in Ubuntu
 subprocess.run('sudo ln -s /usr/bin/python3 /usr/bin/python', shell=True)
 
