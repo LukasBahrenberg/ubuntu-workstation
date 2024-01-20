@@ -57,3 +57,7 @@ subprocess.run('ssh-add ~/.ssh/id_ed25519', shell=True)
 subprocess.run('git config --global user.name "{}"'.format(gituser), shell=True)
 subprocess.run('git config --global user.email "{}"'.format(gitemail), shell=True)
 subprocess.run('cat ~/.ssh/id_ed25519.pub', shell=True)
+
+subprocess.run('ssh-keygen -t ed25519 -b 4096 -C "bahrenberg@donex.io" -f ".ssh/bitbucket"', shell=True)
+subprocess.run('ssh-add ~/.ssh/bitbucket', shell=True)
+subprocess.run('cat ~/.ssh/bitbucket.pub', shell=True)
